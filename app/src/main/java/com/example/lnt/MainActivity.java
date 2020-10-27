@@ -2,6 +2,7 @@ package com.example.lnt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -18,7 +19,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickHandler(View view) {
-        String name = nameEditText.getText().toString();
-        Toast.makeText(this, "Welcome to android "+name, Toast.LENGTH_SHORT).show();
+        switch (view.getId()){
+            case R.id.loginbutton:
+                String name = nameEditText.getText().toString();
+                //Toast.makeText(this, "Welcome to android "+name, Toast.LENGTH_SHORT).show();
+                Intent homeIntent = new Intent(MainActivity.this,HomeActivity.class);
+                homeIntent.putExtra("mykey",name);
+                startActivity(homeIntent);
+                break;
+            case R.id.cancelbutton:
+                Toast.makeText(this, "cancelled", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
     }
 }
