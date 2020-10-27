@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lnt</string>
+    <string name="enter_your_name">enter your name</string>
+    <string name="remember_pwd">remember password</string>
+    <string name="login">login</string>
+    <string name="cancel">cancel</string>
+</resources>
